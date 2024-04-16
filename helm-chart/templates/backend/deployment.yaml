@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hospital-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hospital-service
+  template:
+    metadata:
+      labels:
+        app: hospital-service
+    spec:
+      containers:
+        - name: hospital-service
+          image: hospital-service:1.0.0
+          ports:
+            - containerPort: 9090

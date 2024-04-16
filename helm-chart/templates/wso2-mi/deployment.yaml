@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wso2-mi-hospital-int
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wso2-mi-hospital-int
+  template:
+    metadata:
+      labels:
+        app: wso2-mi-hospital-int
+    spec:
+      containers:
+        - name: wso2-mi-hospital-int
+          image: wso2-mi-hospital-int:1.0.0
+          ports:
+            - containerPort: 8290

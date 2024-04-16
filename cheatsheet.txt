@@ -1,0 +1,5 @@
+# Port forward to backend service
+kubectl port-forward service/hospital-service 9090:9090
+
+# Port forward to integration layer
+kubectl port-forward service/wso2-mi-hospital-int 8290:8290
